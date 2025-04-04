@@ -18,6 +18,15 @@
     <!-- Imagem principal da modelo -->
     <div class="imagem-principal">
       <img src="imagem-modelo-principal.jpg" alt="Modelo em chamada de vídeo" class="img-destaque">
+      
+      <!-- Botão de áudio -->
+      <div class="audio-container">
+        <button id="botao-audio" class="botao-audio">
+          <i class="fas fa-volume-up"></i> Ouça minha voz
+          <span class="pulse"></span>
+        </button>
+        <audio id="audio-modelo" src="audio-modelo.mp3"></audio>
+      </div>
     </div>
 
     <section class="preco">
@@ -61,6 +70,7 @@
         <li><i class="fas fa-clock"></i> Duração de 30 minutos</li>
         <li><i class="fas fa-lock"></i> Totalmente segura e discreta</li>
         <li><i class="fas fa-calendar-alt"></i> Agende para o dia e horário que preferir</li>
+        <li><i class="fas fa-volume-up"></i> Conversa quente e envolvente</li>
       </ul>
     </section>
 
@@ -95,6 +105,10 @@
       <p>Satisfação garantida ou seu dinheiro de volta</p>
     </section>
 
+    <!-- Imagem adicional próxima ao botão -->
+    <div class="imagem-chamada">
+      <img src="imagem-modelo-chamada.jpg" alt="Modelo pronta para chamada" class="img-chamada">
+    </div>
 
     <section class="aviso">
       <p><strong>⚠️ Conteúdo +18. Acesso permitido apenas para maiores de idade.</strong></p>
@@ -102,7 +116,7 @@
     </section>
 
     <footer>
-      <a href="https://pay.cakto.com.br/tzyr6xq_329235" class="botao">QUERO AGENDAR AGORA <i class="fas fa-arrow-right"></i></a>
+      <a href="https://seulinkdecheckout.com" class="botao">QUERO AGENDAR AGORA <i class="fas fa-arrow-right"></i></a>
       <p class="seguranca"><i class="fas fa-lock"></i> Pagamento 100% seguro</p>
     </footer>
   </div>
@@ -172,6 +186,32 @@
       mudarSlide(slideAtual);
       setTimeout(autoSlide, 3000);
     }
+    
+    // Script para o botão de áudio
+    const botaoAudio = document.getElementById('botao-audio');
+    const audioModelo = document.getElementById('audio-modelo');
+    let audioTocando = false;
+    
+    botaoAudio.addEventListener('click', function() {
+      if (audioTocando) {
+        audioModelo.pause();
+        audioModelo.currentTime = 0;
+        botaoAudio.innerHTML = '<i class="fas fa-volume-up"></i> Ouça minha voz <span class="pulse"></span>';
+        botaoAudio.classList.remove('tocando');
+      } else {
+        audioModelo.play();
+        botaoAudio.innerHTML = '<i class="fas fa-pause"></i> Pausar';
+        botaoAudio.classList.add('tocando');
+      }
+      audioTocando = !audioTocando;
+    });
+    
+    // Quando o áudio terminar
+    audioModelo.addEventListener('ended', function() {
+      audioTocando = false;
+      botaoAudio.innerHTML = '<i class="fas fa-volume-up"></i> Ouça minha voz <span class="pulse"></span>';
+      botaoAudio.classList.remove('tocando');
+    });
     
     window.onload = function() {
       atualizarContador();
