@@ -1,0 +1,335 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  header {
+    margin-bottom: 15px;
+  }
+  
+  header h1 {
+    color: #ff3366;
+    margin-bottom: 10px;
+    font-size: 28px;
+  }
+  
+  .subtitulo {
+    font-size: 16px;
+    margin-top: 0;
+  }
+  
+  /* Imagem principal */
+  .imagem-principal {
+    margin-bottom: 20px;
+  }
+  
+  .img-destaque {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .preco {
+    background-color: #252525;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .valor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .valor-antigo {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 16px;
+  }
+  
+  .valor-atual {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .valor h2 {
+    color: #ff3366;
+    font-size: 36px;
+    margin: 5px 0 15px;
+  }
+  
+  .oferta-timer {
+    margin-top: 10px;
+  }
+  
+  .oferta-timer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .contador {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 18px;
+    color: #ffcc00;
+  }
+  
+  .contador span {
+    display: inline-block;
+    background-color: #333;
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin: 0 5px;
+    min-width: 30px;
+  }
+  
+  /* Carrossel de imagens */
+  .carrossel-container {
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  .carrossel {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .carrossel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carrossel-slide.ativo {
+    opacity: 1;
+  }
+  
+  .carrossel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carrossel-pontos {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .ponto {
+    width: 12px;
+    height: 12px;
+    background-color: #444;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .ponto.ativo {
+    background-color: #ff3366;
+  }
+  
+  .beneficios {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    background-color: #252525;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .beneficios li {
+    margin: 15px 0;
+    padding-left: 30px;
+    position: relative;
+  }
+  
+  .beneficios li i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: #ff3366;
+  }
+  
+  .como-funciona {
+    margin-bottom: 25px;
+  }
+  
+  .como-funciona h3 {
+    color: #ff3366;
+    margin-bottom: 15px;
+  }
+  
+  .passos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .passo {
+    width: 48%;
+    margin-bottom: 15px;
+    background-color: #252525;
+    border-radius: 10px;
+    padding: 15px 10px;
+    position: relative;
+  }
+  
+  .passo-numero {
+    background-color: #ff3366;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: bold;
+  }
+  
+  .passo p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .vagas {
+    margin-bottom: 20px;
+  }
+  
+  .vagas-texto {
+    color: #ffcc00;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .garantia {
+    background-color: #252525;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .garantia i {
+    font-size: 24px;
+    color: #ffcc00;
+    margin-right: 10px;
+  }
+  
+  .garantia p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  /* Imagem próxima ao botão */
+  .imagem-chamada {
+    margin: 20px 0;
+  }
+  
+  .img-chamada {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .aviso {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #f8c102;
+    background-color: rgba(248, 193, 2, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .aviso p {
+    margin: 5px 0;
+  }
+  
+  .botao {
+    display: block;
+    width: 100%;
+    padding: 18px 20px;
+    background-color: #ff3366;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(255, 51, 102, 0.3);
+  }
+  
+  .botao:hover {
+    background-color: #cc2954;
+    transform: translateY(-2px);
+  }
+  
+  .botao:active {
+    transform: translateY(0);
+  }
+  
+  .botao i {
+    margin-left: 8px;
+  }
+  
+  .seguranca {
+    margin-top: 15px;
+    color: #999;
+    font-size: 14px;
+  }
+  
+  .seguranca i {
+    margin-right: 5px;
+  }
+  
+  /* Melhorias específicas para mobile */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 24px;
+    }
+    
+    .valor h2 {
+      font-size: 32px;
+    }
+    
+    .botao {
+      padding: 16px;
+      font-size: 16px;
+    }
+    
+    .passo {
+      width: 100%;
+    }
+    
+    .carrossel {
+      height: 250px;
+    }
+  }

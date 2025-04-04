@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chamada Privada +18</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🔥 Chamada de Vídeo Privada +18 🔥</h1>
+      <p class="subtitulo">Tenha uma experiência exclusiva com uma acompanhante real, por vídeo ao vivo no WhatsApp.</p>
+    </header>
+
+    <!-- Imagem principal da modelo -->
+    <div class="imagem-principal">
+      <img src="imagem-modelo-principal.jpg" alt="Modelo em chamada de vídeo" class="img-destaque">
+    </div>
+
+    <section class="preco">
+      <div class="valor">
+        <span class="valor-antigo">DE R$49,90</span>
+        <span class="valor-atual">POR APENAS</span>
+        <h2>R$ 19,90</h2>
+      </div>
+      <div class="oferta-timer">
+        <p>Oferta expira em:</p>
+        <div class="contador">
+          <span id="horas">24</span>h
+          <span id="minutos">00</span>m
+          <span id="segundos">00</span>s
+        </div>
+      </div>
+    </section>
+
+    <section class="carrossel-container">
+      <div class="carrossel">
+        <div class="carrossel-slide ativo">
+          <img src="imagem-modelo-1.jpg" alt="Modelo pose 1">
+        </div>
+        <div class="carrossel-slide">
+          <img src="imagem-modelo-2.jpg" alt="Modelo pose 2">
+        </div>
+        <div class="carrossel-slide">
+          <img src="imagem-modelo-3.jpg" alt="Modelo pose 3">
+        </div>
+      </div>
+      <div class="carrossel-pontos">
+        <span class="ponto ativo" onclick="mudarSlide(0)"></span>
+        <span class="ponto" onclick="mudarSlide(1)"></span>
+        <span class="ponto" onclick="mudarSlide(2)"></span>
+      </div>
+    </section>
+
+    <section class="conteudo">
+      <ul class="beneficios">
+        <li><i class="fas fa-video"></i> Chamada individual pelo WhatsApp</li>
+        <li><i class="fas fa-clock"></i> Duração de 30 minutos</li>
+        <li><i class="fas fa-lock"></i> Totalmente segura e discreta</li>
+        <li><i class="fas fa-calendar-alt"></i> Agende para o dia e horário que preferir</li>
+      </ul>
+    </section>
+
+    <section class="como-funciona">
+      <h3>COMO FUNCIONA:</h3>
+      <div class="passos">
+        <div class="passo">
+          <div class="passo-numero">1</div>
+          <p>Faça o pagamento</p>
+        </div>
+        <div class="passo">
+          <div class="passo-numero">2</div>
+          <p>Receba a confirmação</p>
+        </div>
+        <div class="passo">
+          <div class="passo-numero">3</div>
+          <p>Agende sua chamada</p>
+        </div>
+        <div class="passo">
+          <div class="passo-numero">4</div>
+          <p>Conecte-se no horário combinado</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vagas">
+      <p class="vagas-texto"><i class="fas fa-exclamation-circle"></i> Apenas <strong>5 vagas</strong> disponíveis hoje!</p>
+    </section>
+
+    <section class="garantia">
+      <i class="fas fa-shield-alt"></i>
+      <p>Satisfação garantida ou seu dinheiro de volta</p>
+    </section>
+
+
+    <section class="aviso">
+      <p><strong>⚠️ Conteúdo +18. Acesso permitido apenas para maiores de idade.</strong></p>
+      <p>Ao fazer a compra, você confirma ter mais de 18 anos.</p>
+    </section>
+
+    <footer>
+      <a href="https://seulinkdecheckout.com" class="botao">QUERO AGENDAR AGORA <i class="fas fa-arrow-right"></i></a>
+      <p class="seguranca"><i class="fas fa-lock"></i> Pagamento 100% seguro</p>
+    </footer>
+  </div>
+
+  <script>
+    // Script para o contador regressivo
+    function atualizarContador() {
+      let segundos = parseInt(document.getElementById('segundos').innerText);
+      let minutos = parseInt(document.getElementById('minutos').innerText);
+      let horas = parseInt(document.getElementById('horas').innerText);
+      
+      segundos--;
+      
+      if (segundos < 0) {
+        segundos = 59;
+        minutos--;
+        
+        if (minutos < 0) {
+          minutos = 59;
+          horas--;
+          
+          if (horas < 0) {
+            horas = 23;
+          }
+        }
+      }
+      
+      document.getElementById('segundos').innerText = segundos < 10 ? '0' + segundos : segundos;
+      document.getElementById('minutos').innerText = minutos < 10 ? '0' + minutos : minutos;
+      document.getElementById('horas').innerText = horas;
+      
+      setTimeout(atualizarContador, 1000);
+    }
+    
+    // Script para o carrossel
+    let slideAtual = 0;
+    const slides = document.querySelectorAll('.carrossel-slide');
+    const pontos = document.querySelectorAll('.ponto');
+    
+    function mudarSlide(n) {
+      // Remover classe ativo de todos os slides
+      slides.forEach(slide => {
+        slide.classList.remove('ativo');
+      });
+      
+      // Remover classe ativo de todos os pontos
+      pontos.forEach(ponto => {
+        ponto.classList.remove('ativo');
+      });
+      
+      // Definir o slide atual
+      slideAtual = n;
+      
+      // Adicionar classe ativo ao slide atual
+      slides[slideAtual].classList.add('ativo');
+      
+      // Adicionar classe ativo ao ponto atual
+      pontos[slideAtual].classList.add('ativo');
+    }
+    
+    // Mudar slide automaticamente a cada 3 segundos
+    function autoSlide() {
+      slideAtual++;
+      if (slideAtual >= slides.length) {
+        slideAtual = 0;
+      }
+      mudarSlide(slideAtual);
+      setTimeout(autoSlide, 3000);
+    }
+    
+    window.onload = function() {
+      atualizarContador();
+      setTimeout(autoSlide, 3000); // Inicia o slide automático após 3 segundos
+    };
+  </script>
+
+</body>
+</html>
